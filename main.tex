@@ -34,23 +34,86 @@
  Pour plus d'information sur les licenses vous pouvez consulter creativecommons.org.
  
  \section{Principes généraux}
+ \label{princip}
+ Le sts est un système de jeu de rôle sur table (JDR). Le jeu de rôle sur table se pratique avec un maître du jeu (MJ) et des joueurs. Le maître du jeu prépare un scénario, chaque joueur crée ensuite un personnage (PJ, pour ''personnage joueur''). Le maître du jeu décrit ensuite la situation initiale de son scénario et les joueurs vont raconter les actions de leurs personnages, le MJ raconte la suite des événement en fonction des actions des PJ et ainsi de suite. Le but du jeu est de ''résoudre'' le scénario, donc arriver à une situation finale dans le récit.
+ 
+ \subsection{Abréviations utiles}
+ 
+\begin{description}
+ \item[D[X]:] dés à X face, un D4 est un dé à 4 face, un D6 un dés à 6 faces, un D10 un dés à 10 faces. Le sts utilise uniquement des dés à 10 faces.
+ \item[FDP:] fiche de personnage. C'est la fiche où sont inscrites toutes les informations sur le personnage.
+ \item[MJ:] maître du jeu. C'est le joueur qui contrôlle le déroullement du scénario.
+ \item[PJ:] personnage joueur. Ce sont les personnages contrôllés par les joueurs.
+ \item[PNJ:] personnage non-joueur. Ce sont les personnages dans le scénario qui sont contrôllés par le MJ plutôt que les joueurs.
+ \item[XP:] point d'expériences.
+\end{description}
+ 
+ \section{Règles de bases}
+ \label{rule}
+ Sont présenté dans cette section les règles générales et abstraite du sts. Ces règles ne permettent pas encore de jouer, vous devez préalablement implémenter le système pour être en mesure de démarrer une partie. L'implementation est présentée dans la section \ref{implem}. Des exemples d'implémentations sont présenté dans la section \ref{exempl}.
  
  \subsection{Les personnages}
- \label{princip::char}
+ \label{rule::char}
+  Les personnages sont au coeur de l'histoire, qu'ils en soient les protagonistes (PJ, PNJ) ou les antagonistes (PNJ). Le sts décrits chaque personnage par un ensemble de traits, classé par catégories.\\
+  \\
+  Chaque joueur crée en général 1 personnage, bien qu'il soit possible pour un joueur de contrôller plusieurs personnages en même temps.\\
+  \\
+  Il est aussi possible que le MJ délègue le contrôlle temporaire de certain PNJ à un ou plusieurs joueurs.\\
+  \\
+  Pour créer un personnage, le joueur choisis pour chaque catégorie un nombre de traits prévus par l'implémentation. Référez-vous à la sous-section \ref{rule::cat} concernant les catégories. Référez-vous à la section \ref{implem} concernant l'implémentation.\\
+  \\
+  L'en
  
  \subsection{Les traits}
- \label{princip::traits}
+ \label{rule::traits}
+ 
+ Un trait représente une caractéristique pour un personnage, que ce soit une faculté, un élément de son historique, une caractéristique physique ou mentale. Chaque trait est décrit sur la FDP par son intitulé et éventuellement un niveau (de 1 jusqu'à 3) et/ou une condition d'application forcée.
+ 
+ \begin{description}
+  \item[L'intitulé:] décrit le trait par un mot ou une courte description.
+  \item[Le niveau:] décrit l'importance du trait, ce qui est important lors des tests.
+  \item[La condition d'application forcée:] décrit quand le joueur est obligé d'utiliser son trait, ce qui est important lors des tests.
+ \end{description}
+ 
+ Les traits peuvent être choisis par le joueur ou imposés par les règles et/ou le MJ. L'implémentation peut définir des traits imposés soit sous forme de questions ouvertes auquelles les joueurs peuvent répondre, soit sous forme d'intitulés fixes propre à l'univers. Un trait peut-aussi être imposé conditionellement, suite aux choix du joueurs lors de la création de son personnage.
  
  \subsection{Les catégories}
- \label{princip::cat}
+ \label{rule::cat}
+ 
+ Les traits sont classé par catégories. La liste des catégorie est définie par l'implémentation.
  
  \subsection{Les tests}
- \label{princip::test}
+ \label{rule::test}
+ 
+ Alors que le MJ raconte l'histoire, ou suite à l'action d'un des joueurs, il est possible que survienne une situation dont l'issue est incertaine. Les tests permettent de résoudre ce genre de situation. Un test se déroule comme suit, il peut impliquer 1 ou plusieurs PJ face à 0, 1 ou plusieurs PNJ:
+ 
+ \begin{description}
+  \item[Calcul de difficulté:] Le MJ choisis la difficulté du test en fonction de la situation.
+  \item[Énoncé de la situation:] le MJ énonce la situation et indique au(x) joueur(s) concerné(s) qu'il y a un test et l'issue probable en cas d'échec et/ou réussite. Il peut énoncer la difficulté du test, mais il peut aussi la garder secrète (afin que le joueur ne puisse pas connaître le résultat).
+  \item[Détermination des malus et bonus:] Ensuite chaque joueur impliqué annonce les traits sur sa fiche de personnage qui peuvent l'avantager dans la situation présente, il gagne un bonus égal à la somme de leurs niveaux. Il ne peut faire valoir qu'un trait par catégorie (sauf si plus d'un trait dans une catégorie a une condition d'application forcée et offre un bonus). Le MJ peut refuser de faire valoir un trait, ou limiter le bonus qu'il applique si le trait ne peut pas s'appliquer à la situation présente. Puis le joueur retire de ce total les malus apporté par des traits avec une condition d'application forcée. Si un trait désavantage un personnage dans une situation il peut choisir de l'utiliser égallement pour se donner un malus, la règle qui veut que seul un trait par catégorie soit utilisable reste valide. Si plusieurs personnages sont impliqués dans un test, ils additionnent leurs bonus.
+  \item[Lancé de dé:] Le joueur dont le PJ est le principal protagoniste de l'action lance un dé à 10 faces et additionne le bonus / soustrait le malus du résultat. Si la somme est égale ou supérieure à la difficulté le test est réussi, sinon le test est raté.
+  \item[Résolution des conséquences:] En fonction de la réussite ou de l'échec du test, le MJ décrit la suite des événements. Il est possible pour le joueur de limiter son échec en subissant un effet néfaste sur un autre enjeux.
+ \end{description}
+ 
+ Si les PJ sont opposés à 1 ou plusieurs PNJ, alors il est possible, plutôt que de choisir un niveau de difficulté fixe pour les PNJ, de leur faire tirer un test aussi, et de comparer les résultats. Cela a pour effet de ralentir et compliquer les tests, mais cela peut aussi apporter une touche de piment au scénario en permettant à des joueurs de profiter d'un coup de chance pour battre des ennemis à priori plus puissant qu'eux. Néanmoins nous recommandons plutôt de changer le niveau de difficulté des ennemis en fonction de la scène, cela offre un peu plus de contrôlle au MJ, et cela évite qu'un PNJ important soit battut dès la première rencontre avec les PJ.\\
+ \\
+ Si au moins 1 PJ est impliqué dans chaque camps (il est possible que des PJ poursuivent des objectifs contraires), alors le test est forcément réalisé en tirant 2 dés, 1 pour chaque camps.
+
  
  \subsection{Évolution des personnages}
- \label{princip::evolv}
+ \label{rule::evolv}
+ 
+ Au cours de vos différentes parties, il est vraisemblable que vos personnages vont progresser. Ceci est figuré par l'expérience. Chaque personnage a une jauge d'XP. Chaque fois qu'un joueur rate un test, il ajoute à la jauge de son personnage un point d'expérience (le sts considère que les PJ aprennent de leurs erreurs). Le MJ détermine ensuite le nombre d'XP nécessaire pour:
+ 
+ \begin{description}
+  \item[Augmenter un trait:] jusqu'à un maximum de 3.
+  \item[Ouvrir un nouveau trait:] au niveau 1.
+ \end{description}
+
+ Le fait est que les joueurs recevront plus ou moins de point d'expérience en fonction du nombre de test demandé par le MJ. Comme cela dépend de la manière de mener le jeu du MJ c'est à lui de déterminer ces paramètres.
  
  \section{Implémenter le STS}
+ \label{implem}
  
  \subsection{Traits d'identité}
  \label{implem::traits}
@@ -58,7 +121,11 @@
  \subsection{Définir les catégories}
  \label{implem::cat}
  
+ \subsection{Choisir les ratios d'XP}
+ \label{implem::cat}
+ 
  \section{Exemples d'implémentations}
+ \label{exempl}
  
  \subsection{Med-Fan classique}
  
