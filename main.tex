@@ -90,7 +90,7 @@
  \begin{description}
   \item[Calcul de difficulté:] Le MJ choisis la difficulté du test en fonction de la situation.
   \item[Énoncé de la situation:] le MJ énonce la situation et indique au(x) joueur(s) concerné(s) qu'il y a un test et l'issue probable en cas d'échec et/ou réussite. Il peut énoncer la difficulté du test, mais il peut aussi la garder secrète (afin que le joueur ne puisse pas connaître le résultat).
-  \item[Détermination des malus et bonus:] Ensuite chaque joueur impliqué annonce les traits sur sa fiche de personnage qui peuvent l'avantager dans la situation présente, il gagne un bonus égal à la somme de leurs niveaux. Il ne peut faire valoir qu'un trait par catégorie (sauf si plus d'un trait dans une catégorie a une condition d'application forcée et offre un bonus). Le MJ peut refuser de faire valoir un trait, ou limiter le bonus qu'il applique si le trait ne peut pas s'appliquer à la situation présente. Puis le joueur retire de ce total les malus apporté par des traits avec une condition d'application forcée. Si un trait désavantage un personnage dans une situation il peut choisir de l'utiliser égallement pour se donner un malus, la règle qui veut que seul un trait par catégorie soit utilisable reste valide. Si plusieurs personnages sont impliqués dans un test, ils additionnent leurs bonus.
+  \item[Détermination des malus et bonus:] Ensuite chaque joueur impliqué annonce les traits sur sa fiche de personnage qui peuvent l'avantager dans la situation présente, il gagne un bonus égal à la somme de leurs niveaux. Il ne peut faire valoir qu'un trait par catégorie (sauf si plus d'un trait dans une catégorie a une condition d'application forcée et offre un bonus). Le MJ peut refuser de faire valoir un trait, ou limiter son bonus si le trait ne peut pas s'appliquer à la situation présente. Puis le joueur retire de ce total les malus apporté par des traits avec une condition d'application forcée. Si un trait désavantage un personnage dans une situation il peut choisir de l'utiliser également pour se donner un malus, la règle qui veut que seul un trait par catégorie soit utilisable reste valide. Si plusieurs personnages sont impliqués dans un test, ils additionnent leurs bonus.
   \item[Lancé de dé:] Le joueur dont le PJ est le principal protagoniste de l'action lance un dé à 10 faces et additionne le bonus / soustrait le malus du résultat. Si la somme est égale ou supérieure à la difficulté le test est réussi, sinon le test est raté.
   \item[Résolution des conséquences:] En fonction de la réussite ou de l'échec du test, le MJ décrit la suite des événements. Il est possible pour le joueur de limiter son échec en subissant un effet néfaste sur un autre enjeux.
  \end{description}
@@ -115,22 +115,68 @@
  \section{Implémenter le STS}
  \label{implem}
  
+ Le STS est, de base, un système particulièrement générique. Pour y jouer vous devez ``l'implémenter'', cad déterminer un certain nombre de paramètres pour l'adapter à votre univers. Cette phase d'implémentation consiste essentiellement à choisir dans quelles catégories les joueurs peuvent choisir des traits, déterminer le nombre de traits à la création des personnages et choisir à partir de combiens d'XP les joueurs peuvent faire varier les traits de leurs personnages.
+ 
  \subsection{Traits d'identité}
  \label{implem::traits}
+ 
+ Les traits d'identité sont des traits forcés avec uniquement un intitulé (ils n'ont de niveau que si le joueur les reporte dans une catégorie, autrement ils n'apportent aucun bonus). Générallement on y incluera le nom du personnages. Selon votre implémentation vous y incluerez aussi l'origine, la race ou d'autres traits du genre.\\
+ \\
+ Les traits d'identité n'ont d'autre importance que d'identifier le personnage, inutile de surcharger cette section.\\
+ \\
  
  \subsection{Définir les catégories}
  \label{implem::cat}
  
- \subsection{Choisir les ratios d'XP}
+ La définition des catégories est l'aspect le plus importants de l'implémentation. Comme les bonus ne peuvent-être cumulé qu'entre les catégories, plus il y a de catégorie, plus les personnages peuvent devenir puissants. Nous recommandons de choisir 3 catégories: les traits naturels (commun au monde tel que nous le connaissons), les traits spéciaux de l'univers (catégorie à définir en fonction de l'univers) et les traits d'historiques (relié au background et future souhaité pour le personnage). Les exemples cité dans la section \ref{exempl} sont basés sur cette structure.\\
+ \\
+ Il faut ensuite choisir le nombre de traits que chaque joueur aura au départ dans chacune des catégories. Il est possibl de choisir un nombre fixe ou une plage. Enfin il est possible d'ajouter des contraintes du type:
+ 
+ \begin{itemize}
+  \item La sommes des traits dans plusieurs catégories doit-être égale à un nombre de traits fixes.
+  \item Il est impossible d'avoir des traits dans deux ou plus catégories en même temps.
+ \end{itemize}
+
+ Il faut encore ajouter deux catégories spéciales, toujours présentes.
+ 
+ La première : contacts et matériels. Les traits de cette catégories peuvent, contrairement au traits d'identité, apporter des bonus, mais ils ne se gagnent pas avec l'expérience, mais en cours de jeu en cherchant au bonne endroits ou en se liant aux bonnes personnes.
+ 
+ La seconde : santé physique et mentale, qui permet au MJ d'ajouter des bonus et surtout malus circonstanciels selon les dégâts subit par les joueurs. À noter que si un personnage peut accumuler de nombreux malus, c'est au joueurs de le déclarer définitivement hors-jeu, le MJ n'ayant pas ce pouvoir là.
+ 
+ \subsection{Choisir les besoins d'XP}
  \label{implem::cat}
+ 
+ Il faut enfin choisir de combiens d'XP les joueurs auront besoin pour augmenter un trait et en ouvrir un nouveau. Par défaut considérez qu'il faut 10 points d'XP. Augmentez un peu si les scénarios qui vont avec votre univers demandent beaucoups de tests, au contraire diminuer si les personnages ont peu de chance de croiser un challenge.\\
+ \\
+ Comme le nombre de test dépend aussi de votre style de maître du jeu, sentez vous libre d'adaptez ces paramètres si vous prenez l'implémentation de quelqu'un d'autre.
  
  \section{Exemples d'implémentations}
  \label{exempl}
  
+ Ces exemples classiques vous montrent comment utiliser le sts dans certaines configurations classiques.
+ 
  \subsection{Med-Fan classique}
+ 
+ \begin{description}
+  \item [Traits d'identités:] Nom, Race
+  \item [Catégories:] Traits naturels, Traits Magiques, Traits légendaires
+  \item [Besoins en XP:] Monter un trait = 10 XP, Ouvrir un trait = 10 XP
+ \end{description}
  
  \subsection{Futuriste}
  
+ \begin{description}
+  \item [Traits d'identités:] Nom
+  \item [Catégories:] Traits naturels, Traits Scientifiques, Traits de destin
+  \item [Besoins en XP:] Monter un trait = 10 XP, Ouvrir un trait = 10 XP
+ \end{description}
+ 
  \subsection{Horreur contemporain}
+ 
+ \begin{description}
+  \item [Traits d'identités:] Nom
+  \item [Catégories:] Traits naturels, Traits De folie, Traits de (sombres) secrets
+  \item [Besoins en XP:] Monter un trait = 10 XP, Ouvrir un trait = 10 XP
+ \end{description}
  
 \end{document}
