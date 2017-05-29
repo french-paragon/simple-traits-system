@@ -21,7 +21,7 @@
  
  \section{Introduction}
  
- Ce document est le document de référence du Simple Traits System, ou système de traits simple, abrégé sts. Il s'agit d'un système générique pour le jeu de rôle sur table optimisé pour être rapide à mettre en oeuvre, donner une grande liberté dans la détermination des personnages tout en recréant une ambiance proche des systèmes ``classiques'' tel que le d20 system ou le système d100.\\
+ Ce document est le document de référence du Simple Traits System, ou système de traits simple, abrégé sts. Il s'agit d'un système générique pour le jeu de rôle sur table optimisé pour être rapide à mettre en oeuvre, donner une grande liberté dans la détermination des personnages tout en recréant une ambiance proche des systèmes ``classiques'' tel que le d20 system ou le basic system.\\
  \\
  Ce document est à destination des maîtres du jeu désirant utiliser le système générique, ainsi que des auteurs et éditeurs qui pourraient être intéréssé à employer le système en lien avec leurs univers. Il est assumé que le lecteur a déjà une idée assez claire de comment fonctionne un jeu de rôle sur table.
  
@@ -50,7 +50,7 @@
  
  \section{Règles de bases}
  \label{rule}
- Sont présenté dans cette section les règles générales et abstraite du sts. Ces règles ne permettent pas encore de jouer, vous devez préalablement implémenter le système pour être en mesure de démarrer une partie. L'implementation est présentée dans la section \ref{implem}. Des exemples d'implémentations sont présenté dans la section \ref{exempl}.
+ Sont présenté dans cette section les règles générales et abstraites du sts. Ces règles ne permettent pas encore de jouer, vous devez préalablement implémenter le système pour être en mesure de démarrer une partie. L'implementation est présentée dans la section \ref{implem}. Des exemples d'implémentations sont présenté dans la section \ref{exempl}.
  
  \subsection{Les personnages}
  \label{rule::char}
@@ -62,7 +62,7 @@
   \\
   Pour créer un personnage, le joueur choisis pour chaque catégorie un nombre de traits prévus par l'implémentation. Référez-vous à la sous-section \ref{rule::cat} concernant les catégories. Référez-vous à la section \ref{implem} concernant l'implémentation.\\
   \\
-  L'en
+  L'en % TODO: continue there ???
  
  \subsection{Les traits}
  \label{rule::traits}
@@ -95,7 +95,7 @@
   \item[Résolution des conséquences:] En fonction de la réussite ou de l'échec du test, le MJ décrit la suite des événements. Il est possible pour le joueur de limiter son échec en subissant un effet néfaste sur un autre enjeux.
  \end{description}
  
- Si les PJ sont opposés à 1 ou plusieurs PNJ, alors il est possible, plutôt que de choisir un niveau de difficulté fixe pour les PNJ, de leur faire tirer un test aussi, et de comparer les résultats. Cela a pour effet de ralentir et compliquer les tests, mais cela peut aussi apporter une touche de piment au scénario en permettant à des joueurs de profiter d'un coup de chance pour battre des ennemis à priori plus puissant qu'eux. Néanmoins nous recommandons plutôt de changer le niveau de difficulté des ennemis en fonction de la scène, cela offre un peu plus de contrôlle au MJ, et cela évite qu'un PNJ important soit battut dès la première rencontre avec les PJ.\\
+ Si les PJ sont opposés à 1 ou plusieurs PNJ, alors il est possible, plutôt que de choisir un niveau de difficulté fixe pour les PNJ, de leur faire tirer un test aussi, et de comparer les résultats. Cela a pour effet de ralentir et compliquer les tests, mais cela peut aussi apporter une touche de piment au scénario en permettant à des joueurs de profiter d'un coup de chance pour battre des ennemis à priori plus puissant qu'eux. Néanmoins nous recommandons plutôt de changer le niveau de difficulté des ennemis en fonction de la scène, cela offre un peu plus de contrôle au MJ, et cela évite qu'un PNJ important soit battut dès la première rencontre avec les PJ.\\
  \\
  Si au moins 1 PJ est impliqué dans chaque camps (il est possible que des PJ poursuivent des objectifs contraires), alors le test est forcément réalisé en tirant 2 dés, 1 pour chaque camps.
 
@@ -130,7 +130,7 @@
  
  La définition des catégories est l'aspect le plus importants de l'implémentation. Comme les bonus ne peuvent-être cumulé qu'entre les catégories, plus il y a de catégorie, plus les personnages peuvent devenir puissants. Nous recommandons de choisir 3 catégories: les traits naturels (commun au monde tel que nous le connaissons), les traits spéciaux de l'univers (catégorie à définir en fonction de l'univers) et les traits d'historiques (relié au background et future souhaité pour le personnage). Les exemples cité dans la section \ref{exempl} sont basés sur cette structure.\\
  \\
- Il faut ensuite choisir le nombre de traits que chaque joueur aura au départ dans chacune des catégories. Il est possibl de choisir un nombre fixe ou une plage. Enfin il est possible d'ajouter des contraintes du type:
+ Il faut ensuite choisir le nombre de traits que chaque joueur aura au départ dans chacune des catégories. Il est possible de choisir un nombre fixe ou une plage. Enfin il est possible d'ajouter des contraintes du type:
  
  \begin{itemize}
   \item La sommes des traits dans plusieurs catégories doit-être égale à un nombre de traits fixes.
@@ -139,16 +139,16 @@
 
  Il faut encore ajouter deux catégories spéciales, toujours présentes.
  
- La première : contacts et matériels. Les traits de cette catégories peuvent, contrairement au traits d'identité, apporter des bonus, mais ils ne se gagnent pas avec l'expérience, mais en cours de jeu en cherchant au bonne endroits ou en se liant aux bonnes personnes.
+ La première : contacts et matériels. Les traits de cette catégories peuvent, contrairement au traits d'identité, apporter des bonus. Ils ne se gagnent pas avec l'expérience, mais en cours de jeu en cherchant au bonne endroits ou en se liant aux bonnes personnes.
  
- La seconde : santé physique et mentale, qui permet au MJ d'ajouter des bonus et surtout malus circonstanciels selon les dégâts subit par les joueurs. À noter que si un personnage peut accumuler de nombreux malus, c'est au joueurs de le déclarer définitivement hors-jeu, le MJ n'ayant pas ce pouvoir là.
+ La seconde : santé physique et mentale, qui permet au MJ d'ajouter des bonus et surtout malus circonstanciels selon les dégâts subis par les joueurs. À noter que si un personnage peut accumuler de nombreux malus, c'est au joueur de le déclarer définitivement hors-jeu, le MJ n'ayant pas ce pouvoir là.
  
  \subsection{Choisir les besoins d'XP}
  \label{implem::cat}
  
- Il faut enfin choisir de combiens d'XP les joueurs auront besoin pour augmenter un trait et en ouvrir un nouveau. Par défaut considérez qu'il faut 10 points d'XP. Augmentez un peu si les scénarios qui vont avec votre univers demandent beaucoups de tests, au contraire diminuer si les personnages ont peu de chance de croiser un challenge.\\
+ Il faut enfin choisir de combiens d'XP les joueurs auront besoin pour augmenter un trait et en ouvrir un nouveau. Par défaut considérez qu'il faut 10 points d'XP. Augmentez un peu si les scénarios qui vont avec votre univers demandent beaucoups de tests, au contraire diminuez si les personnages ont peu de chance de croiser un challenge.\\
  \\
- Comme le nombre de test dépend aussi de votre style de maître du jeu, sentez vous libre d'adaptez ces paramètres si vous prenez l'implémentation de quelqu'un d'autre.
+ Comme le nombre de tests dépend aussi de votre style de maître du jeu, sentez vous libre d'adaptez ces paramètres si vous prenez l'implémentation de quelqu'un d'autre.
  
  \section{Exemples d'implémentations}
  \label{exempl}
@@ -159,7 +159,7 @@
  
  \begin{description}
   \item [Traits d'identités:] Nom, Race
-  \item [Catégories:] Traits naturels, Traits Magiques, Traits légendaires
+  \item [Catégories:] Traits naturels, Traits magiques, Traits légendaires
   \item [Besoins en XP:] Monter un trait = 10 XP, Ouvrir un trait = 10 XP
  \end{description}
  
@@ -167,7 +167,7 @@
  
  \begin{description}
   \item [Traits d'identités:] Nom
-  \item [Catégories:] Traits naturels, Traits Scientifiques, Traits de destin
+  \item [Catégories:] Traits naturels, Traits scientifiques, Traits de destin
   \item [Besoins en XP:] Monter un trait = 10 XP, Ouvrir un trait = 10 XP
  \end{description}
  
