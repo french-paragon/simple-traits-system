@@ -13,7 +13,7 @@
 
 \author{Laurent "Paragon" Valentin Jospin}
 \title{Simple Traits System}
-\date{25.02.2017}
+\date{09.05.2019}
 
 \begin{document}
 
@@ -21,9 +21,9 @@
  
  \section{Introduction}
  
- Ce document est le document de référence du Simple Traits System, ou système de traits simple, abrégé sts. Il s'agit d'un système générique pour le jeu de rôle sur table optimisé pour être rapide à mettre en oeuvre, donner une grande liberté dans la détermination des personnages tout en recréant une ambiance proche des systèmes ``classiques'' tel que le d20 system ou le basic system.\\
+ Ce document est le document de référence du Simple Traits System, ou Système de Traits Simples, abrégé STS. Il s'agit d'un système générique pour le jeu de rôle sur table optimisé pour être rapide à mettre en oeuvre, donner une grande liberté dans la détermination des personnages tout en recréant une ambiance proche des systèmes ``classiques'' tel que le d20 system ou le basic system.\\
  \\
- Ce document est à destination des maîtres du jeu désirant utiliser le système générique, ainsi que des auteurs et éditeurs qui pourraient être intéréssé à employer le système en lien avec leurs univers. Il est assumé que le lecteur a déjà une idée assez claire de comment fonctionne un jeu de rôle sur table.
+ Ce document est à destination des maîtres du jeu désirant utiliser le système générique, ainsi que des auteurs et éditeurs qui pourraient être intéréssés à employer le système pour leurs propres créations. Il est assumé que le lecteur a déjà une idée assez claire de comment fonctionne un jeu de rôle sur table.
  
  \section{License et utilisation}
  
@@ -35,39 +35,38 @@
  
  \section{Principes généraux}
  \label{princip}
- Le sts est un système de jeu de rôle sur table (JDR). Le jeu de rôle sur table se pratique avec un maître du jeu (MJ) et des joueurs. Le maître du jeu prépare un scénario, chaque joueur crée ensuite un personnage (PJ, pour ''personnage joueur''). Le maître du jeu décrit ensuite la situation initiale de son scénario et les joueurs vont raconter les actions de leurs personnages, le MJ raconte la suite des événement en fonction des actions des PJ et ainsi de suite. Le but du jeu est de ''résoudre'' le scénario, donc arriver à une situation finale dans le récit.
+ Le STS est un système de jeu de rôle sur table (JDR). Le jeu de rôle sur table se pratique avec un maître du jeu (MJ) et des joueurs. Le maître du jeu prépare un scénario, chaque joueur crée ensuite un personnage (PJ, pour ''personnage joueur''). Le MJ décrit ensuite la situation initiale de son scénario et les joueurs vont raconter les actions de leurs personnages, le MJ raconte la suite des événements en fonction des actions des PJ et ainsi de suite. Le but du jeu est de ''résoudre'' le scénario, donc arriver à une situation finale dans le récit.
  
  \subsection{Abréviations utiles}
  
 \begin{description}
- \item[D[X]:] dés à X face, un D4 est un dé à 4 face, un D6 un dés à 6 faces, un D10 un dés à 10 faces. Le sts utilise uniquement des dés à 10 faces.
- \item[FDP:] fiche de personnage. C'est la fiche où sont inscrites toutes les informations sur le personnage.
- \item[MJ:] maître du jeu. C'est le joueur qui contrôlle le déroullement du scénario.
- \item[PJ:] personnage joueur. Ce sont les personnages contrôllés par les joueurs.
- \item[PNJ:] personnage non-joueur. Ce sont les personnages dans le scénario qui sont contrôllés par le MJ plutôt que les joueurs.
- \item[XP:] point d'expériences.
+ \item[DX\,:] dés à X face, un D4 est un dé à 4 face, un D6 un dés à 6 faces, un D10 un dés à 10 faces. Le STS utilise uniquement des dés à 10 faces.
+ \item[FDP\,:] fiche de personnage. C'est la fiche où sont inscrites toutes les informations sur le personnage.
+ \item[MJ\,:] maître du jeu. C'est le joueur qui contrôle le déroulement du scénario.
+ \item[PJ\,:] personnage joueur. Ce sont les personnages contrôlés par les autres joueurs.
+ \item[PNJ\,:] personnage non-joueur. Ce sont les personnages dans le scénario qui sont contrôlés par le MJ plutôt que les joueurs.
+ \item[XP\,:] point d'expériences.
 \end{description}
  
  \section{Règles de bases}
  \label{rule}
- Sont présenté dans cette section les règles générales et abstraites du sts. Ces règles ne permettent pas encore de jouer, vous devez préalablement implémenter le système pour être en mesure de démarrer une partie. L'implementation est présentée dans la section \ref{implem}. Des exemples d'implémentations sont présenté dans la section \ref{exempl}.
+ Sont présentées dans cette section les règles générales et abstraites du STS. Ces règles ne permettent pas encore de jouer, vous devez préalablement implémenter le système pour l'adapter à l'univers que vous comptez utiliser. L'implémentation est présentée dans la section \ref{implem}. Des exemples d'implémentations sont présenté dans la section \ref{exempl}.
  
  \subsection{Les personnages}
  \label{rule::char}
-  Les personnages sont au coeur de l'histoire, qu'ils en soient les protagonistes (PJ, PNJ) ou les antagonistes (PNJ). Le sts décrits chaque personnage par un ensemble de traits, classé par catégories.\\
+  Les personnages sont au cœur de l'histoire, qu'ils en soient les protagonistes (PJ, PNJ) ou les antagonistes (PNJ). Le STS décrits chaque personnage par un ensemble de traits, classé par catégories.\\
   \\
-  Chaque joueur crée en général 1 personnage, bien qu'il soit possible pour un joueur de contrôller plusieurs personnages en même temps.\\
+  Chaque joueur crée en général 1 personnage, bien qu'il soit possible pour un joueur de contrôler plusieurs personnages en même temps.\\
   \\
-  Il est aussi possible que le MJ délègue le contrôlle temporaire de certain PNJ à un ou plusieurs joueurs.\\
+  Il est aussi possible que le MJ délègue le contrôle temporaire de certain PNJ à un ou plusieurs joueurs.\\
   \\
   Pour créer un personnage, le joueur choisis pour chaque catégorie un nombre de traits prévus par l'implémentation. Référez-vous à la sous-section \ref{rule::cat} concernant les catégories. Référez-vous à la section \ref{implem} concernant l'implémentation.\\
   \\
-  L'en % TODO: continue there ???
  
  \subsection{Les traits}
  \label{rule::traits}
  
- Un trait représente une caractéristique pour un personnage, que ce soit une faculté, un élément de son historique, une caractéristique physique ou mentale. Chaque trait est décrit sur la FDP par son intitulé et éventuellement un niveau (de 1 jusqu'à 3) et/ou une condition d'application forcée.
+ Un trait représente une caractéristique pour un personnage, que ce soit une faculté, un élément de son historique, une caractéristique physique ou mentale. Chaque trait est décrit sur la FDP par son intitulé et éventuellement un niveau et/ou une condition qui force le trait à s'appliquer.
  
  \begin{description}
   \item[L'intitulé:] décrit le trait par un mot ou une courte description.
@@ -75,52 +74,44 @@
   \item[La condition d'application forcée:] décrit quand le joueur est obligé d'utiliser son trait, ce qui est important lors des tests.
  \end{description}
  
- Les traits peuvent être choisis par le joueur ou imposés par les règles et/ou le MJ. L'implémentation peut définir des traits imposés soit sous forme de questions ouvertes auquelles les joueurs peuvent répondre, soit sous forme d'intitulés fixes propre à l'univers. Un trait peut-aussi être imposé conditionellement, suite aux choix du joueurs lors de la création de son personnage.
+ Les traits peuvent être choisis par le joueur ou imposés par les règles et/ou le MJ. L'implémentation peut définir des traits imposés soit sous forme de questions ouvertes auxquelles les joueurs peuvent répondre, soit sous forme d'intitulés fixes propre à l'univers. Un trait peut-aussi être imposé conditionnellement, suite aux choix du joueurs lors de la création de son personnage.
  
  \subsection{Les catégories}
  \label{rule::cat}
  
- Les traits sont classé par catégories. La liste des catégorie est définie par l'implémentation.
+ Les traits sont classé par catégories. La liste des catégorie est définie par l'implémentation. Chaque catégorie peut poser des limites sur le niveau des traits (maximal ou minimal) en faisant partie. Les catégories peuvent aussi avoir une incidence sur l'évolution des personnages. Il ne sera par exemple possible d'ouvrir un trait ou d'en changer le niveau que dans certaines catégorie, parfois sous certaines conditions (voir la section \ref{rule::evolv}).
  
  \subsection{Les tests}
  \label{rule::test}
  
- Alors que le MJ raconte l'histoire, ou suite à l'action d'un des joueurs, il est possible que survienne une situation dont l'issue est incertaine. Les tests permettent de résoudre ce genre de situation. Un test se déroule comme suit, il peut impliquer 1 ou plusieurs PJ face à 0, 1 ou plusieurs PNJ:
+ Alors que le MJ raconte l'histoire, ou suite à l'action d'un des joueurs, il est possible que survienne une situation dont l'issue est incertaine. Les tests permettent de résoudre ce genre de situation. Un test se déroule comme suit, il peut impliquer 1 ou plusieurs PJ face à 0, 1 ou plusieurs PNJ.
  
- \begin{description}
-  \item[Calcul de difficulté:] Le MJ choisis la difficulté du test en fonction de la situation.
-  \item[Énoncé de la situation:] le MJ énonce la situation et indique au(x) joueur(s) concerné(s) qu'il y a un test et l'issue probable en cas d'échec et/ou réussite. Il peut énoncer la difficulté du test, mais il peut aussi la garder secrète (afin que le joueur ne puisse pas connaître le résultat).
-  \item[Détermination des malus et bonus:] Ensuite chaque joueur impliqué annonce les traits sur sa fiche de personnage qui peuvent l'avantager dans la situation présente, il gagne un bonus égal à la somme de leurs niveaux. Il ne peut faire valoir qu'un trait par catégorie (sauf si plus d'un trait dans une catégorie a une condition d'application forcée et offre un bonus). Le MJ peut refuser de faire valoir un trait, ou limiter son bonus si le trait ne peut pas s'appliquer à la situation présente. Puis le joueur retire de ce total les malus apporté par des traits avec une condition d'application forcée. Si un trait désavantage un personnage dans une situation il peut choisir de l'utiliser également pour se donner un malus, la règle qui veut que seul un trait par catégorie soit utilisable reste valide. Si plusieurs personnages sont impliqués dans un test, ils additionnent leurs bonus.
-  \item[Lancé de dé:] Le joueur dont le PJ est le principal protagoniste de l'action lance un dé à 10 faces et additionne le bonus / soustrait le malus du résultat. Si la somme est égale ou supérieure à la difficulté le test est réussi, sinon le test est raté.
-  \item[Résolution des conséquences:] En fonction de la réussite ou de l'échec du test, le MJ décrit la suite des événements. Il est possible pour le joueur de limiter son échec en subissant un effet néfaste sur un autre enjeux.
- \end{description}
+ Le joueur devant réussir le test annonce quel trait lui procurent un avantage et éventuellement un inconvénient. Il aditionne le niveau de ses traits lui procurant un avantage et soustrait celui des traits lui infligeant un inconvéniant. Le résultat est sont bonus (ou éventuel malus) pour son jet de dé.
  
- Si les PJ sont opposés à 1 ou plusieurs PNJ, alors il est possible, plutôt que de choisir un niveau de difficulté fixe pour les PNJ, de leur faire tirer un test aussi, et de comparer les résultats. Cela a pour effet de ralentir et compliquer les tests, mais cela peut aussi apporter une touche de piment au scénario en permettant à des joueurs de profiter d'un coup de chance pour battre des ennemis à priori plus puissant qu'eux. Néanmoins nous recommandons plutôt de changer le niveau de difficulté des ennemis en fonction de la scène, cela offre un peu plus de contrôle au MJ, et cela évite qu'un PNJ important soit battut dès la première rencontre avec les PJ.\\
- \\
- Si au moins 1 PJ est impliqué dans chaque camps (il est possible que des PJ poursuivent des objectifs contraires), alors le test est forcément réalisé en tirant 2 dés, 1 pour chaque camps.
+ Le MJ fixe lui le seuil de difficulté du test de manière absolue. La même action sera donc plus facile pour un PJ avec les bon traits.
+ 
+ Le joueur lance un D10 et ajoute son bonus (ou soustrait son malus) et indique le score au MJ. Ce dernier indique si l'action est réussie ou ratée selon que le résultat soit plus grand ou égal au seuil de difficulté ou non. 
 
  
  \subsection{Évolution des personnages}
  \label{rule::evolv}
  
- Au cours de vos différentes parties, il est vraisemblable que vos personnages vont progresser. Ceci est figuré par l'expérience. Chaque personnage a une jauge d'XP. Chaque fois qu'un joueur rate un test, il ajoute à la jauge de son personnage un point d'expérience (le sts considère que les PJ aprennent de leurs erreurs). Le MJ détermine ensuite le nombre d'XP nécessaire pour:
+ Au cours de vos différentes parties, il est vraisemblable que vos personnages vont progresser. Ceci est figuré par l'expérience. Pour chaque échec lors d'un jet, tant qu'il ne s'agit pas de retenter la même action, le joueur compte une coche pour son personnage. Le STS considère en effet que les PJ aprennent de leurs erreurs. L'implémentation fixe ensuite le nombre de coches nécessaires pour gagner un XP. Un XP permet de\,:
  
  \begin{description}
-  \item[Augmenter un trait:] jusqu'à un maximum de 3.
-  \item[Ouvrir un nouveau trait:] au niveau 1.
+  \item[Augmenter un trait\,:] jusqu'à un éventuel maximum dans les catégorie de traits où cela est possible.
+  \item[Ouvrir un nouveau trait\,:] au niveau minimal dans une catégorie ou cela est possible. Dans certains cas, il peut être nécessaire d'utiliser plus qu'un XP pour ouvrir un trait, nottament dans les catégories qui ne peuvent contenir des traits de bas niveau.
  \end{description}
-
- Le fait est que les joueurs recevront plus ou moins de point d'expérience en fonction du nombre de test demandé par le MJ. Comme cela dépend de la manière de mener le jeu du MJ c'est à lui de déterminer ces paramètres.
  
  \section{Implémenter le STS}
  \label{implem}
  
- Le STS est, de base, un système particulièrement générique. Pour y jouer vous devez ``l'implémenter'', cad déterminer un certain nombre de paramètres pour l'adapter à votre univers. Cette phase d'implémentation consiste essentiellement à choisir dans quelles catégories les joueurs peuvent choisir des traits, déterminer le nombre de traits à la création des personnages et choisir à partir de combiens d'XP les joueurs peuvent faire varier les traits de leurs personnages.
+ Le STS est, de base, un système particulièrement générique. Pour y jouer vous devez ``l'implémenter'', cad déterminer un certain nombre de paramètres pour l'adapter à votre univers. Cette phase d'implémentation consiste essentiellement à choisir dans quelles catégories les joueurs peuvent choisir des traits, déterminer le nombre de traits à la création des personnages et choisir à partir de combiens de coches les joueurs peuvent gagner un XP pour leur PJ.
  
  \subsection{Traits d'identité}
  \label{implem::traits}
  
- Les traits d'identité sont des traits forcés avec uniquement un intitulé (ils n'ont de niveau que si le joueur les reporte dans une catégorie, autrement ils n'apportent aucun bonus). Générallement on y incluera le nom du personnages. Selon votre implémentation vous y incluerez aussi l'origine, la race ou d'autres traits du genre.\\
+ Les traits d'identité sont des traits forcés avec uniquement un intitulé (ils n'ont de niveau que si le joueur les reporte dans une catégorie, autrement ils n'apportent aucun bonus). Générallement on y incluera le nom du personnages. Selon votre implémentation vous y incluerez aussi l'origine, l'espèce ou d'autres traits du même type.\\
  \\
  Les traits d'identité n'ont d'autre importance que d'identifier le personnage, inutile de surcharger cette section.\\
  \\
@@ -128,55 +119,57 @@
  \subsection{Définir les catégories}
  \label{implem::cat}
  
- La définition des catégories est l'aspect le plus importants de l'implémentation. Comme les bonus ne peuvent-être cumulé qu'entre les catégories, plus il y a de catégorie, plus les personnages peuvent devenir puissants. Nous recommandons de choisir 3 catégories: les traits naturels (commun au monde tel que nous le connaissons), les traits spéciaux de l'univers (catégorie à définir en fonction de l'univers) et les traits d'historiques (relié au background et future souhaité pour le personnage). Les exemples cité dans la section \ref{exempl} sont basés sur cette structure.\\
+ La définition des catégories est l'aspect le plus importants de l'implémentation. Comme les bonus ne peuvent-être cumulé qu'entre les catégories, plus il y a de catégorie, plus les personnages peuvent devenir puissants. Nous recommandons de choisir 3 catégories: les traits naturels (les capacité naturelles, physique ou mentales, du personnage), les traits spéciaux de l'univers (catégorie à définir en fonction de l'univers) et les traits de background (relié à l'historique ou au future du personnage). Les exemples cité dans la section \ref{exempl} sont basés sur cette structure. Il est recommandé de borner le niveau des traits dans ces catégories, générallement entre 1 et 3. Commes les traits peuvent-être ouverts à 1 dans ces catégories, un seul XP sera nécessaire pour ouvrir un trait.\\
  \\
  Il faut ensuite choisir le nombre de traits que chaque joueur aura au départ dans chacune des catégories. Il est possible de choisir un nombre fixe ou une plage. Enfin il est possible d'ajouter des contraintes du type:
  
  \begin{itemize}
-  \item La sommes des traits dans plusieurs catégories doit-être égale à un nombre de traits fixes.
+  \item Le nombre de traits dans plusieurs catégories doit-être égal à une valeur donnée.
   \item Il est impossible d'avoir des traits dans deux ou plus catégories en même temps.
  \end{itemize}
 
- Il faut encore ajouter deux catégories spéciales, toujours présentes.
+Il existe aussi une catégorie spécicale, toujours présente, les traits d'état. Cette catégorie sert à faire le suivis de l'état physique, mental et émotionnel du personnage, de son matériel, ou de toute autre donnée temporaire relevante par rapport au jeu. Les joueurs ne peuvent pas utiliser leurs XP pour gagner de traits d'état ou en changer la valeur. C'est le MJ, en fonction des actions des PJ et des conséquences qu'elles impliquent, qui fera varier, ouvrira ou fermera ces traits.
  
- La première : contacts et matériels. Les traits de cette catégories peuvent, contrairement au traits d'identité, apporter des bonus. Ils ne se gagnent pas avec l'expérience, mais en cours de jeu en cherchant au bonne endroits ou en se liant aux bonnes personnes.
+ \subsection{Fixer le nombre d'échecs par XP}
+ \label{implem::xp}
  
- La seconde : santé physique et mentale, qui permet au MJ d'ajouter des bonus et surtout malus circonstanciels selon les dégâts subis par les joueurs. À noter que si un personnage peut accumuler de nombreux malus, c'est au joueur de le déclarer définitivement hors-jeu, le MJ n'ayant pas ce pouvoir là.
- 
- \subsection{Choisir les besoins d'XP}
- \label{implem::cat}
- 
- Il faut enfin choisir de combiens d'XP les joueurs auront besoin pour augmenter un trait et en ouvrir un nouveau. Par défaut considérez qu'il faut 10 points d'XP. Augmentez un peu si les scénarios qui vont avec votre univers demandent beaucoups de tests, au contraire diminuez si les personnages ont peu de chance de croiser un challenge.\\
+ Il faut enfin choisir de combiens d'échecs les joueurs auront besoin pour gagner des XP. Par défaut considérez qu'il faut 10 échec par point d'XP. Augmentez un peu si les scénarios qui vont avec votre univers demandent beaucoups de tests, au contraire diminuez si les personnages ont peu de chance de croiser un challenge ou si évoler est compliqué.\\
  \\
  Comme le nombre de tests dépend aussi de votre style de maître du jeu, sentez vous libre d'adaptez ces paramètres si vous prenez l'implémentation de quelqu'un d'autre.
  
  \section{Exemples d'implémentations}
  \label{exempl}
  
- Ces exemples classiques vous montrent comment utiliser le sts dans certaines configurations classiques.
+ Ces exemples classiques vous montrent comment utiliser le STS dans certaines configurations classiques.
  
  \subsection{Med-Fan classique}
  
+ Sur une terre légendaire, ou se cotoyent elfes, nains et dragons, les PJ seront des héros légendaires qui tenteront de laisser leur nom dans la légende. 
+ 
  \begin{description}
-  \item [Traits d'identités:] Nom, Race
-  \item [Catégories:] Traits naturels, Traits magiques, Traits légendaires
-  \item [Besoins en XP:] Monter un trait = 10 XP, Ouvrir un trait = 10 XP
+  \item [Traits d'identités\,:] Nom, Race
+  \item [Catégories\,:] Traits naturels (3 traits à la création), Traits magiques (1 ou 3 traits à la création), Traits légendaires (1 ou 2 traits à la création, 3 traits magiques et légendaires à la création).
+  \item [échecs par XP\,:] 10
  \end{description}
  
  \subsection{Futuriste}
  
+ Dans un future lointain, la technologie a largement progressé. L'élite des humains porte maintenant intégrée dans sa chair les nombreuses améliorations que la science a apportées.
+ 
  \begin{description}
-  \item [Traits d'identités:] Nom
-  \item [Catégories:] Traits naturels, Traits scientifiques, Traits de destin
-  \item [Besoins en XP:] Monter un trait = 10 XP, Ouvrir un trait = 10 XP
+  \item [Traits d'identités\,:] Nom
+  \item [Catégories\,:] Traits naturels (3 traits à la création), Améliorations (aucun traits à la création, 5 XP nécessaire pour ouvrir un trait, niveau de 3 à 5), Données du Log (3 traits à la création)
+  \item [échecs par XP\,:] 6
  \end{description}
  
  \subsection{Horreur contemporain}
  
+ Dans un monde qui ressemble au nôtre, est-il seulement différent, de sombrent secrets sont cachés au coeurs des forêts, au fond des mers et jusque dans nos placards. Le PJ ne seront d'ailleurs pas forcément les plus innocents qui soient...
+ 
  \begin{description}
-  \item [Traits d'identités:] Nom
-  \item [Catégories:] Traits naturels, Traits De folie, Traits de (sombres) secrets
-  \item [Besoins en XP:] Monter un trait = 10 XP, Ouvrir un trait = 10 XP
+  \item [Traits d'identités\,:] Nom
+  \item [Catégories\,:] Traits naturels (3 traits à la création), Traits de folie (aucun trait à la création), Sombres secrets (1 trait à la création)
+  \item [échecs par XP\,:] 13
  \end{description}
  
 \end{document}
